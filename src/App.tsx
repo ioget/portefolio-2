@@ -46,6 +46,8 @@ import profileImage from './asstes/WhatsApp_Image_2025-12-18_at_1.33.39_AM__Copy
 import certifiedApiSecurity from './asstes/Certification/image/certified-api-security-analyst.png';
 import imgCertificate from './asstes/Certification/image/ECC-EHE-Certificate.png';
 import casaExam from './asstes/Certification/image/CASAExam20260409-31-sj9nmz.png';
+import give1projetLogo from './asstes/give1projet.png';
+import undpLogo from './asstes/UNDP.png';
 import badge1 from './asstes/hacking-bagde/Screenshot From 2026-04-04 10-38-07.png';
 import badge2 from './asstes/hacking-bagde/Screenshot From 2026-04-04 11-03-02.png';
 import badge3 from './asstes/hacking-bagde/Screenshot From 2026-04-04 11-15-54.png';
@@ -188,9 +190,13 @@ export default function App() {
                  
                  
                  <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-2xl p-6 border border-white/10">
-                   <div className="flex items-center gap-3 mb-2">
-                     <Award className="w-5 h-5 text-cyan-400" />
+                   <div className="flex items-center gap-4 mb-4">
+                     <div className="flex items-center gap-3">
+                       <img src={undpLogo} alt="UNDP" className="w-20 h-15 object-contain" />
+                     </div>
                      <span className="text-sm font-bold text-white uppercase tracking-widest">UNDP Tech4Peace AMBASSADOR</span>
+                       <img src={give1projetLogo} alt="Give1Project" className="w-20 h-16 ml-4 rounded-2xl object-contain" />
+
                    </div>
                    <p className="text-sm text-zinc-400">Give1Project Program</p>
                  </div>
