@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, Download, Award, Calendar, Building, ExternalLink, Search, Shield, Lock, Cpu, Code, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ThemeToggle } from '../components/ThemeToggle';
 
 // Import all certification images
 import AccessControlConcepts from '../asstes/Certification/image/AccessControlConcepts.png';
@@ -456,9 +457,12 @@ const Certifications = () => {
               <span className="font-mono text-sm">Back to Portfolio</span>
             </Link>
             
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-xs font-mono text-zinc-500">VERIFIED CREDENTIALS</span>
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-xs font-mono text-zinc-500">VERIFIED CREDENTIALS</span>
+              </div>
             </div>
           </div>
         </div>

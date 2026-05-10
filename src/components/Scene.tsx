@@ -1,12 +1,13 @@
 
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Float, Text, MeshDistortMaterial, Grid } from '@react-three/drei';
+import { Points, PointMaterial, Float, MeshDistortMaterial, Grid } from '@react-three/drei';
 import * as THREE from 'three';
+import { useTheme } from '../ThemeContext';
 
-function ParticleField() {
-  const ref = useRef<any>();
-  
+function ParticleField({ color }: { color: string }) {
+  const ref = useRef<any>(null);
+
   const positions = useMemo(() => {
     const pos = new Float32Array(2000 * 3);
     for (let i = 0; i < 2000; i++) {
@@ -28,7 +29,7 @@ function ParticleField() {
     <Points positions={positions} ref={ref}>
       <PointMaterial
         transparent
-        color="#22d3ee"
+        color={color}
         size={0.05}
         sizeAttenuation={true}
         depthWrite={false}
@@ -38,9 +39,9 @@ function ParticleField() {
   );
 }
 
-function CyberCore() {
-  const meshRef = useRef<any>();
-  
+function CyberCore({ shellColor, meshColor }: { shellColor: string; meshColor: string }) {
+  const meshRef = useRef<any>(null);
+
   useFrame((state) => {
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.2 + (window.scrollY * 0.001);
@@ -53,53 +54,64 @@ function CyberCore() {
       <mesh ref={meshRef}>
         <octahedronGeometry args={[1, 0]} />
         <MeshDistortMaterial
-          color="#0ea5e9"
+          color={meshColor}
           speed={3}
           distort={0.4}
           radius={1}
           wireframe
         />
       </mesh>
-      {/* Outer shell */}
       <mesh scale={1.2}>
         <octahedronGeometry args={[1, 1]} />
-        <meshBasicMaterial color="#22d3ee" wireframe opacity={0.1} transparent />
+        <meshBasicMaterial color={shellColor} wireframe opacity={0.1} transparent />
       </mesh>
     </Float>
   );
 }
 
 export const Scene = () => {
+  const { resolved } = useTheme();
+  const isLight = resolved === 'light';
+
+  const fogColor = isLight ? '#f3f4f6' : '#000';
+  const particleColor = isLight ? '#16a34a' : '#22d3ee';
+  const coreMesh = isLight ? '#15803d' : '#0ea5e9';
+  const shellColor = isLight ? '#16a34a' : '#22d3ee';
+  const pointLightColor = isLight ? '#16a34a' : '#22d3ee';
+  const sectionColor = isLight ? '#22c55e' : '#0ea5e9';
+  const cellColor = isLight ? '#bbf7d0' : '#082f49';
+  const planeColor = isLight ? '#f3f4f6' : '#000';
+
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <fog attach="fog" args={['#000', 5, 15]} />
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#22d3ee" />
-        
-        <CyberCore />
-        <ParticleField />
-        
+        <fog attach="fog" args={[fogColor, 5, 15]} />
+        <ambientLight intensity={isLight ? 0.65 : 0.5} />
+        <pointLight position={[10, 10, 10]} intensity={1} color={pointLightColor} />
+
+        <CyberCore meshColor={coreMesh} shellColor={shellColor} />
+        <ParticleField color={particleColor} />
+
         <Grid
           infiniteGrid
           fadeDistance={20}
           fadeStrength={5}
           cellSize={1}
           sectionSize={5}
-          sectionColor="#0ea5e9"
-          cellColor="#082f49"
+          sectionColor={sectionColor}
+          cellColor={cellColor}
           position={[0, -2, 0]}
         />
-        
+
         <group position={[0, -1.8, 0]}>
-           <mesh rotation={[-Math.PI / 2, 0, 0]}>
-             <planeGeometry args={[100, 100]} />
-             <meshStandardMaterial 
-                color="#000" 
-                metalness={1} 
-                roughness={0.1} 
-             />
-           </mesh>
+          <mesh rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[100, 100]} />
+            <meshStandardMaterial
+              color={planeColor}
+              metalness={isLight ? 0.35 : 1}
+              roughness={isLight ? 0.45 : 0.1}
+            />
+          </mesh>
         </group>
       </Canvas>
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black" />

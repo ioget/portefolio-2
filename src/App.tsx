@@ -39,6 +39,7 @@ import {
 import { Scene } from './components/Scene';
 import { CipherGate } from './components/CipherGate';
 import { ProjectCarousel } from './components/ProjectCarousel';
+import { ThemeToggle } from './components/ThemeToggle';
 import { profile } from './data';
 import Certifications from './pages/Certifications';
 import profileImage from './asstes/WhatsApp_Image_2025-12-18_at_1.33.39_AM__Copy_-removebg-preview.png';
@@ -124,23 +125,26 @@ export default function App() {
                 </div>
               </div>
               
-              <div className="hidden md:flex items-center gap-8 text-sm font-mono tracking-widest text-zinc-400">
-                {['About', 'Projects', 'Experience', 'Education', 'Testimonials', 'Certifications'].map((item) => (
+              <div className="flex items-center gap-4 md:gap-8">
+                <ThemeToggle />
+                <div className="hidden md:flex items-center gap-8 text-sm font-mono tracking-widest text-zinc-400">
+                  {['About', 'Projects', 'Experience', 'Education', 'Testimonials', 'Certifications'].map((item) => (
+                    <a 
+                      key={item} 
+                      href={`#${item.toLowerCase()}`} 
+                      className="hover:text-cyan-400 transition-colors uppercase relative group"
+                    >
+                      {item}
+                      <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all group-hover:w-full" />
+                    </a>
+                  ))}
                   <a 
-                    key={item} 
-                    href={`#${item.toLowerCase()}`} 
-                    className="hover:text-cyan-400 transition-colors uppercase relative group"
+                    href="mailto:mamakemrosly@gmail.com"
+                    className="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-cyan-400 transition-all text-xs"
                   >
-                    {item}
-                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all group-hover:w-full" />
+                    Email me!
                   </a>
-                ))}
-                <a 
-                  href="mailto:mamakemrosly@gmail.com"
-                  className="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-cyan-400 transition-all text-xs"
-                >
-                  Email me!
-                </a>
+                </div>
               </div>
             </div>
           </nav>
@@ -167,7 +171,7 @@ export default function App() {
                   className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-8"
                 >
                   MAMEKEM <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-zinc-800">ROSLY</span>
+                  <span className="hero-name-gradient text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-zinc-800">ROSLY</span>
                 </motion.h1>
 
                     <motion.p 
@@ -770,7 +774,7 @@ export default function App() {
                href={`mailto:${profile.email}`}
                className="group relative px-12 py-6 bg-white text-black font-black uppercase tracking-[0.3em] text-xs rounded-2xl overflow-hidden hover:shadow-[0_0_50px_rgba(255,255,255,0.2)] transition-all"
              >
-               <span className="relative z-10 group-hover:text-white transition-colors">Terminate & Handshake</span>
+               <span className="footer-cta-label relative z-10 group-hover:text-white transition-colors">Terminate & Handshake</span>
                <div className="absolute inset-0 bg-black scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
              </a>
              <div className="flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-6 rounded-2xl backdrop-blur-md">

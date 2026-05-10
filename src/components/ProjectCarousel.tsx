@@ -4,6 +4,7 @@ import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { Image, Text, Float, RoundedBox, useCursor, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { profile } from '../data';
+import { useTheme } from '../ThemeContext';
 import { ExternalLink, ChevronLeft, ChevronRight, Loader2, AlertTriangle } from 'lucide-react';
 
 class ProjectErrorBoundary extends Component<{ children: React.ReactNode }, { hasError: boolean }> {
@@ -47,8 +48,8 @@ function LoadingFallback() {
   );
 }
 
-function ProjectCard({ project, position, rotation, active, onSelect }: any) {
-  const mesh = useRef<any>();
+function ProjectCard({ project, position, rotation, active, onSelect, accentHex }: any) {
+  const mesh = useRef<any>(null);
   const [hovered, setHover] = useState(false);
   useCursor(hovered);
 
@@ -90,7 +91,7 @@ function ProjectCard({ project, position, rotation, active, onSelect }: any) {
       <Text
         position={[0, -1.4, 0.11]}
         fontSize={0.1}
-        color="#22d3ee"
+        color={accentHex}
         maxWidth={2.5}
         textAlign="center"
       >
@@ -101,6 +102,11 @@ function ProjectCard({ project, position, rotation, active, onSelect }: any) {
 }
 
 export const ProjectCarousel = () => {
+    const { resolved } = useTheme();
+    const isLight = resolved === 'light';
+    const accentHex = isLight ? '#16a34a' : '#22d3ee';
+    const spotHex = isLight ? '#15803d' : '#0ea5e9';
+
     const [index, setIndex] = useState(0);
     const [selectedProject, setSelectedProject] = useState<any>(null);
     const projects = profile.projects;
@@ -130,8 +136,8 @@ export const ProjectCarousel = () => {
             <div className="w-full h-[760px]">
                 <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
                     <ambientLight intensity={0.5} />
-                    <pointLight position={[10, 10, 10]} intensity={1} color="#22d3ee" />
-                    <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={2} color="#0ea5e9" />
+                    <pointLight position={[10, 10, 10]} intensity={1} color={accentHex} />
+                    <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={2} color={spotHex} />
                     
                     <Suspense fallback={<LoadingFallback />}>
                         {projects.map((project, i) => {
@@ -153,6 +159,7 @@ export const ProjectCarousel = () => {
                                         rotation={rotation} 
                                         active={active}
                                         onSelect={handleSelect}
+                                        accentHex={accentHex}
                                     />
                                 </ProjectErrorBoundary>
                             );
@@ -211,7 +218,7 @@ export const ProjectCarousel = () => {
                     </button>
                   </div>
                   <div className="grid gap-6 md:grid-cols-[1.3fr_0.9fr] p-6">
-                    <div className="rounded-4xl bg-black/80 p-4 flex items-center justify-center">
+                    <div className="rounded-4xl  dark:bg-black/80 bg-white/5 p-4 flex items-center justify-center">
                       <img
                         src={selectedProject.image}
                         alt={selectedProject.title}

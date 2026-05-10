@@ -4,3 +4,402 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
+
+/* --- Theme toggle (html.light set by ThemeProvider) --- */
+.theme-toggle {
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #a1a1aa;
+}
+.theme-toggle:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+}
+.light .theme-toggle {
+  border-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #52525b;
+}
+.light .theme-toggle:hover {
+  border-color: rgba(22, 163, 74, 0.45);
+  color: #16a34a;
+}
+
+/* Dark theme default (explicit hook if needed) */
+.dark-root {
+  color-scheme: dark;
+}
+
+/* Light theme: gray-100 base, cyan accents → green-600 (#16a34a) */
+.light {
+  color-scheme: light;
+  color: #111827;
+}
+
+/* Footer CTA: white label on black hover overlay (must stay white) */
+.light .group:hover .footer-cta-label {
+  color: #ffffff !important;
+}
+
+/* Skills / chips: hover target readable on light cards */
+.light .group:hover .group-hover\:text-white:not(.footer-cta-label) {
+  color: #111827 !important;
+}
+
+/* White text on saturated badges/buttons — keep white */
+.light .bg-red-500 .text-white,
+.light .bg-purple-500 .text-white,
+.light .bg-orange-500 .text-white,
+.light .bg-yellow-500 .text-white {
+  color: #ffffff !important;
+}
+
+.light .bg-black {
+  background-color: #f3f4f6 !important;
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .bg-white\/\[0\.08\] {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light .hover\:bg-white\/\[0\.08\]:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light .bg-cyan-500\/10 {
+  background-color: rgb(22 163 74 / 0.12) !important;
+}
+
+.light .bg-purple-500\/10 {
+  background-color: rgba(168, 85, 247, 0.1) !important;
+}
+
+.light .bg-orange-500\/10 {
+  background-color: rgba(249, 115, 22, 0.1) !important;
+}
+
+.light .bg-lime-500\/10 {
+  background-color: rgba(163, 230, 53, 0.1) !important;
+}
+
+.light .bg-green-500\/10 {
+  background-color: rgb(22 163 74 / 0.12) !important;
+}
+
+.light .bg-cyan-500\/5 {
+  background-color: rgb(22 163 74 / 0.06) !important;
+}
+
+.light .bg-purple-500\/5 {
+  background-color: rgba(168, 85, 247, 0.05) !important;
+}
+
+.light .bg-cyan-500\/20 {
+  background-color: rgb(22 163 74 / 0.18) !important;
+}
+
+.light .bg-cyan-500 {
+  background-color: #16a34a !important;
+}
+
+/* Solid cyan accents (dots, lines) → green in light mode */
+.light .bg-cyan-400 {
+  background-color: #16a34a !important;
+}
+
+/* Timeline / HUD gradients using from-cyan-500 */
+.light .from-cyan-500 {
+  --tw-gradient-from: #16a34a var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(22 163 74 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.light .hover\:bg-cyan-500:hover {
+  background-color: #16a34a !important;
+}
+
+.light .hover\:bg-cyan-400:hover {
+  background-color: #22c55e !important;
+}
+
+.light .text-white {
+  color: #111827 !important;
+}
+
+.light .text-white\/90 {
+  color: rgb(17 24 39 / 0.94) !important;
+}
+
+.light .text-white\/80 {
+  color: rgb(17 24 39 / 0.88) !important;
+}
+
+.light .text-white\/70 {
+  color: rgb(17 24 39 / 0.82) !important;
+}
+
+.light .text-white\/60 {
+  color: rgb(17 24 39 / 0.75) !important;
+}
+
+.light .text-white\/50 {
+  color: rgb(17 24 39 / 0.62) !important;
+}
+
+.light .hover\:text-white:hover {
+  color: #111827 !important;
+}
+
+.light .text-zinc-300 {
+  color: #374151 !important;
+}
+
+.light .text-zinc-400 {
+  color: #4b5563 !important;
+}
+
+.light .text-zinc-500 {
+  color: #3f3f46 !important;
+}
+
+.light .text-zinc-600 {
+  color: #27272a !important;
+}
+
+.light .text-zinc-700 {
+  color: #18181b !important;
+}
+
+.light .text-zinc-800 {
+  color: #09090b !important;
+}
+
+.light .border-white\/5 {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light .border-white\/10 {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
+.light .border-cyan-500\/20 {
+  border-color: rgb(22 163 74 / 0.22) !important;
+}
+
+.light .border-cyan-500\/30 {
+  border-color: rgb(22 163 74 / 0.35) !important;
+}
+
+.light .border-cyan-500\/50 {
+  border-color: rgb(22 163 74 / 0.45) !important;
+}
+
+.light .border-purple-500\/20 {
+  border-color: rgba(168, 85, 247, 0.2) !important;
+}
+
+.light .border-purple-500\/30 {
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+.light .border-orange-500\/20 {
+  border-color: rgba(249, 115, 22, 0.2) !important;
+}
+
+.light .border-lime-500\/20 {
+  border-color: rgba(163, 230, 53, 0.2) !important;
+}
+
+.light .border-green-500\/20 {
+  border-color: rgb(22 163 74 / 0.22) !important;
+}
+
+.light .bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+.light .bg-black\/70 {
+  background-color: rgba(17, 24, 39, 0.55) !important;
+}
+
+.light .bg-black\/80 {
+  background-color: rgb(243 244 246 / 0.92) !important;
+}
+
+.light .bg-black\/90 {
+  background-color: rgb(249 250 251 / 0.96) !important;
+}
+
+.light .bg-zinc-950\/95 {
+  background-color: rgb(249 250 251 / 0.98) !important;
+}
+
+.light .text-transparent {
+  color: transparent !important;
+}
+
+.light .text-cyan-400 {
+  color: #16a34a !important;
+}
+
+.light .text-cyan-500 {
+  color: #16a34a !important;
+}
+
+.light .text-cyan-300 {
+  color: #15803d !important;
+}
+
+.light .text-cyan-200 {
+  color: #166534 !important;
+}
+
+.light .hover\:text-cyan-400:hover {
+  color: #16a34a !important;
+}
+
+.light .hover\:text-cyan-300:hover {
+  color: #15803d !important;
+}
+
+.light .text-purple-400 {
+  color: #a855f7 !important;
+}
+
+.light .text-orange-400 {
+  color: #f97316 !important;
+}
+
+.light .text-lime-400 {
+  color: #84cc16 !important;
+}
+
+.light .text-green-400 {
+  color: #15803d !important;
+}
+
+.light .text-green-500 {
+  color: #15803d !important;
+}
+
+.light .text-green-500\/70 {
+  color: rgb(21 128 61 / 0.88) !important;
+}
+
+.light .text-green-300 {
+  color: #166534 !important;
+}
+
+.light .text-yellow-400 {
+  color: #ca8a04 !important;
+}
+
+.light .text-red-400 {
+  color: #ef4444 !important;
+}
+
+.light .text-blue-400 {
+  color: #3b82f6 !important;
+}
+
+.light .hover\:border-cyan-500\/30:hover {
+  border-color: rgb(22 163 74 / 0.35) !important;
+}
+
+.light .hover\:border-cyan-500\/50:hover {
+  border-color: rgb(22 163 74 / 0.5) !important;
+}
+
+.light .focus\:border-cyan-500:focus {
+  border-color: #16a34a !important;
+}
+
+.light .focus\:border-cyan-500\/50:focus {
+  border-color: rgb(22 163 74 / 0.45) !important;
+}
+
+.light .placeholder-zinc-500::placeholder {
+  color: #71717a !important;
+}
+
+/* Hero "ROSLY" title — light mode only (two-tone green) */
+.light .hero-name-gradient {
+  background-image: linear-gradient(to right, #16a34a, #052e16) !important;
+}
+
+/* Gradient stops: cyan → green-600 */
+.light .from-cyan-400 {
+  --tw-gradient-from: #16a34a var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(22 163 74 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.light .from-cyan-500\/10 {
+  --tw-gradient-from: rgb(22 163 74 / 0.12) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(22 163 74 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.light .via-white {
+  --tw-gradient-via: #ffffff var(--tw-gradient-via-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);
+}
+
+.light .to-zinc-800 {
+  --tw-gradient-to: #374151 var(--tw-gradient-to-position);
+}
+
+.light .to-white {
+  --tw-gradient-to: #f9fafb var(--tw-gradient-to-position);
+}
+
+.light .from-black\/20 {
+  --tw-gradient-from: rgb(0 0 0 / 0.06) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.light .to-black {
+  --tw-gradient-to: #f3f4f6 var(--tw-gradient-to-position);
+}
+
+.light .from-black {
+  --tw-gradient-from: #e5e7eb var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(229 231 235 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+/* Selection */
+.light *::selection {
+  background-color: rgb(22 163 74 / 0.25);
+  color: #14532d;
+}
+
+/* Shadows that referenced cyan glow */
+.light .shadow-\[0_0_20px_rgba\(34\,211\,238\,0\.8\)\] {
+  box-shadow: 0 0 20px rgb(22 163 74 / 0.45) !important;
+}
+
+.light .shadow-\[0_0_30px_rgba\(34\,211\,238\,0\.3\)\] {
+  box-shadow: 0 0 28px rgb(22 163 74 / 0.22) !important;
+}
+
+.light .hover\:shadow-\[0_0_30px_rgba\(34\,211\,238\,0\.3\)\]:hover {
+  box-shadow: 0 0 28px rgb(22 163 74 / 0.22) !important;
+}
+
+.light .shadow-\[0_0_30px_rgba\(34\,211\,238\,0\.2\)\] {
+  box-shadow: 0 0 24px rgb(22 163 74 / 0.15) !important;
+}
