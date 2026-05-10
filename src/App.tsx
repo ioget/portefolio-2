@@ -45,6 +45,7 @@ import Certifications from './pages/Certifications';
 import profileImage from './asstes/WhatsApp_Image_2025-12-18_at_1.33.39_AM__Copy_-removebg-preview.png';
 import certifiedApiSecurity from './asstes/Certification/image/certified-api-security-analyst.png';
 import imgCertificate from './asstes/Certification/image/ECC-EHE-Certificate.png';
+import casaExam from './asstes/Certification/image/CASAExam20260409-31-sj9nmz.png';
 import badge1 from './asstes/hacking-bagde/Screenshot From 2026-04-04 10-38-07.png';
 import badge2 from './asstes/hacking-bagde/Screenshot From 2026-04-04 11-03-02.png';
 import badge3 from './asstes/hacking-bagde/Screenshot From 2026-04-04 11-15-54.png';
@@ -598,6 +599,21 @@ export default function App() {
       {/* Certifications Section */}
       <Section id="certifications" title="Certifications" icon={Award}>
         <div className="grid md:grid-cols-3 gap-8">
+          <Card className="group overflow-hidden hover:border-cyan-500/30 transition-all">
+            <div className="aspect-[4/3] overflow-hidden bg-black/50 rounded-lg mb-4">
+              <img 
+                src={casaExam} 
+                alt="CASA Exam Certification"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">CASA Certified Professional</h3>
+              <p className="text-xs text-zinc-500 font-mono uppercase">Cloud Application Security Alliance • 2026</p>
+              <p className="text-sm text-zinc-400">Advanced cloud application security and secure development practices</p>
+            </div>
+          </Card>
+
           <Card className="group overflow-hidden hover:border-cyan-500/30 transition-all">
             <div className="aspect-[4/3] overflow-hidden bg-black/50 rounded-lg mb-4">
               <img 
