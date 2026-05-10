@@ -488,7 +488,7 @@ const Certifications = () => {
           >
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">
               Professional <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-white">Certifications</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r tracking-tighter from-cyan-600 to-gray-900 dark:from-cyan-400 dark:to-black">Certifications</span>
             </h1>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
               A comprehensive collection of verified credentials in cybersecurity, artificial intelligence, and cryptographic systems.
