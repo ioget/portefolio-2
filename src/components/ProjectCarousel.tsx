@@ -48,7 +48,18 @@ function LoadingFallback() {
   );
 }
 
-function ProjectCard({ project, position, rotation, active, onSelect, accentHex }: any) {
+function ProjectCard({
+  project,
+  position,
+  rotation,
+  active,
+  onSelect,
+  accentHex,
+  panelColor,
+  titleColor,
+  panelMetalness,
+  panelRoughness,
+}: any) {
   const mesh = useRef<any>(null);
   const [hovered, setHover] = useState(false);
   useCursor(hovered);
@@ -71,7 +82,7 @@ function ProjectCard({ project, position, rotation, active, onSelect, accentHex 
       }}
       >
       <RoundedBox args={[3, 4, 0.1]} radius={0.1} smoothness={4}>
-        <meshStandardMaterial color="#111" metalness={0.8} roughness={0.2} />
+        <meshStandardMaterial color={panelColor} metalness={panelMetalness} roughness={panelRoughness} />
       </RoundedBox>
       <Image
         url={project.image}
@@ -82,7 +93,7 @@ function ProjectCard({ project, position, rotation, active, onSelect, accentHex 
       <Text
         position={[0, -1, 0.11]}
         fontSize={0.2}
-        color="white"
+        color={titleColor}
         maxWidth={2.5}
         textAlign="center"
       >
@@ -106,6 +117,10 @@ export const ProjectCarousel = () => {
     const isLight = resolved === 'light';
     const accentHex = isLight ? '#16a34a' : '#22d3ee';
     const spotHex = isLight ? '#15803d' : '#0ea5e9';
+    const panelColor = isLight ? '#111111' : '#e4e4e7';
+    const titleColor = isLight ? '#ffffff' : '#111827';
+    const panelMetalness = isLight ? 0.8 : 0.12;
+    const panelRoughness = isLight ? 0.2 : 0.65;
 
     const [index, setIndex] = useState(0);
     const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -160,6 +175,10 @@ export const ProjectCarousel = () => {
                                         active={active}
                                         onSelect={handleSelect}
                                         accentHex={accentHex}
+                                        panelColor={panelColor}
+                                        titleColor={titleColor}
+                                        panelMetalness={panelMetalness}
+                                        panelRoughness={panelRoughness}
                                     />
                                 </ProjectErrorBoundary>
                             );
