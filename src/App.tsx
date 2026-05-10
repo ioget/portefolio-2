@@ -781,7 +781,7 @@ export default function App() {
              </div>
              <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase leading-tight">
                Let's harden the <br />
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-white">Digital Frontier</span>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-white dark:from-cyan-500 dark:to-gray-100">Digital Frontier</span>
              </h2>
           </div>
           

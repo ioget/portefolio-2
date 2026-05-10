@@ -106,16 +106,26 @@ const Certifications = () => {
     // Security Certifications
     {
       id: 1,
+      title: "CASA Certified Professional",
+      issuer: "Cloud Application Security Alliance",
+      date: "2026",
+      category: "security",
+      image: imageFiles['CASAExam20260409-31-sj9nmz'],
+      description: "Advanced cloud application security and secure development practices",
+      credentialId: "CASA-2026-31"
+    },
+    {
+      id: 2,
       title: "Certified API Security Analyst",
       issuer: "APISec University",
       date: "2026",
       category: "security",
       image: imageFiles['certified-api-security-analyst'],
             description: "Advanced API security testing and vulnerability assessment",
-      credentialId: "CASA-2026-31"
+      credentialId: "API-SEC-2026"
     },
     {
-      id: 2,
+      id: 3,
       title: "ECC Excellence Certificate",
       issuer: "European Cybersecurity Challenge",
       date: "2024",
@@ -125,7 +135,7 @@ const Certifications = () => {
       credentialId: "ECC-EHE-2024"
     },
     {
-      id: 3,
+      id: 4,
       title: "Certified Information Systems Security Professional (CISSP)",
       issuer: "ISC2",
       date: "2024",
@@ -135,7 +145,7 @@ const Certifications = () => {
       credentialId: "CISSP-2024"
     },
     {
-      id: 4,
+      id: 5,
       title: "Certified in Cybersecurity",
       issuer: "ISC2",
       date: "2024",
@@ -145,7 +155,7 @@ const Certifications = () => {
       credentialId: "CC-2024"
     },
     {
-      id: 5,
+      id: 6,
       title: "Access Control Concepts",
       issuer: "Coursera",
       date: "2024",
@@ -155,7 +165,7 @@ const Certifications = () => {
       credentialId: "ACCESS-2024"
     },
     {
-      id: 6,
+      id: 7,
       title: "Advanced Malware and Network Anomaly Detection",
       issuer: "Coursera",
       date: "2024",
@@ -165,7 +175,7 @@ const Certifications = () => {
       credentialId: "MALWARE-2024"
     },
     {
-      id: 7,
+      id: 8,
       title: "Incident Response, BC, and DR Concepts",
       issuer: "Coursera",
       date: "2024",
@@ -175,7 +185,7 @@ const Certifications = () => {
       credentialId: "INCIDENT-2024"
     },
     {
-      id: 8,
+      id: 9,
       title: "Network Security",
       issuer: "Coursera",
       date: "2024",
@@ -185,7 +195,7 @@ const Certifications = () => {
       credentialId: "NETSEC-2024"
     },
     {
-      id: 9,
+      id: 10,
       title: "Security Operations",
       issuer: "Coursera",
       date: "2024",
@@ -197,7 +207,7 @@ const Certifications = () => {
     
     // CISSP Domain Certifications
     {
-      id: 10,
+      id: 11,
       title: "CISSP Domain 2: Asset Security",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -207,7 +217,7 @@ const Certifications = () => {
       credentialId: "CISSP-D2-2024"
     },
     {
-      id: 11,
+      id: 12,
       title: "CISSP Domain 3: Security Architecture and Engineering",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -217,7 +227,7 @@ const Certifications = () => {
       credentialId: "CISSP-D3-2024"
     },
     {
-      id: 12,
+      id: 13,
       title: "CISSP Domain 4: Communication and Network Security",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -227,7 +237,7 @@ const Certifications = () => {
       credentialId: "CISSP-D4-2024"
     },
     {
-      id: 13,
+      id: 14,
       title: "CISSP Domain 5: Identity and Access Management (IAM)",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -237,7 +247,7 @@ const Certifications = () => {
       credentialId: "CISSP-D5-2024"
     },
     {
-      id: 14,
+      id: 15,
       title: "CISSP Domain 6: Security Assessment and Testing",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -247,7 +257,7 @@ const Certifications = () => {
       credentialId: "CISSP-D6-2024"
     },
     {
-      id: 15,
+      id: 16,
       title: "CISSP Domain 7: Security Operations",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -257,7 +267,7 @@ const Certifications = () => {
       credentialId: "CISSP-D7-2024"
     },
     {
-      id: 16,
+      id: 17,
       title: "CISSP Domain 8: Software Development Security",
       issuer: "ISC2 / Coursera",
       date: "2024",
@@ -269,7 +279,7 @@ const Certifications = () => {
 
     // AI/ML Certifications
     {
-      id: 17,
+      id: 18,
       title: "AI for Cybersecurity",
       issuer: "Coursera",
       date: "2024",
@@ -279,7 +289,7 @@ const Certifications = () => {
       credentialId: "AI-CYBER-2024"
     },
     {
-      id: 18,
+      id: 19,
       title: "Introduction to AI for Cybersecurity",
       issuer: "Coursera",
       date: "2024",
@@ -289,7 +299,7 @@ const Certifications = () => {
       credentialId: "INTRO-AI-2024"
     },
     {
-      id: 19,
+      id: 20,
       title: "Securing AI and Advanced Topics",
       issuer: "Coursera",
       date: "2024",
@@ -299,7 +309,7 @@ const Certifications = () => {
       credentialId: "SECURE-AI-2024"
     },
     {
-      id: 20,
+      id: 21,
       title: "Machine Learning",
       issuer: "Coursera",
       date: "2024",
@@ -309,7 +319,7 @@ const Certifications = () => {
       credentialId: "ML-2024"
     },
     {
-      id: 21,
+      id: 22,
       title: "Advanced Learning Algorithms",
       issuer: "Coursera",
       date: "2024",
@@ -319,7 +329,7 @@ const Certifications = () => {
       credentialId: "ADV-ML-2024"
     },
     {
-      id: 22,
+      id: 23,
       title: "Supervised Machine Learning: Regression and Classification",
       issuer: "Coursera",
       date: "2024",
@@ -329,7 +339,7 @@ const Certifications = () => {
       credentialId: "SUPER-ML-2024"
     },
     {
-      id: 23,
+      id: 24,
       title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
       issuer: "Coursera",
       date: "2024",
@@ -339,7 +349,7 @@ const Certifications = () => {
       credentialId: "UNSUPER-ML-2024"
     },
     {
-      id: 24,
+      id: 25,
       title: "Neural Networks and Deep Learning",
       issuer: "Coursera",
       date: "2024",
@@ -349,7 +359,7 @@ const Certifications = () => {
       credentialId: "NN-2024"
     },
     {
-      id: 25,
+      id: 26,
       title: "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
       issuer: "Coursera",
       date: "2024",
@@ -361,7 +371,7 @@ const Certifications = () => {
 
     // Mathematics & Programming
     {
-      id: 26,
+      id: 27,
       title: "Calculus for Machine Learning and Data Science",
       issuer: "Coursera",
       date: "2024",
@@ -371,7 +381,7 @@ const Certifications = () => {
       credentialId: "CALC-2024"
     },
     {
-      id: 27,
+      id: 28,
       title: "Mathematics for Machine Learning and Data Science",
       issuer: "Coursera",
       date: "2024",
@@ -381,7 +391,7 @@ const Certifications = () => {
       credentialId: "MATH-2024"
     },
     {
-      id: 28,
+      id: 29,
       title: "Probability & Statistics for Machine Learning & Data Science",
       issuer: "Coursera",
       date: "2024",
@@ -391,7 +401,7 @@ const Certifications = () => {
       credentialId: "STAT-2024"
     },
     {
-      id: 29,
+      id: 30,
       title: "Linear Algebra",
       issuer: "Coursera",
       date: "2024",
@@ -401,7 +411,7 @@ const Certifications = () => {
       credentialId: "LINEAR-2024"
     },
     {
-      id: 30,
+      id: 31,
       title: "Introduction à la programmation orientée objet",
       issuer: "Coursera",
       date: "2024",
@@ -413,7 +423,7 @@ const Certifications = () => {
 
     // Cryptography
     {
-      id: 31,
+      id: 32,
       title: "Cryptography",
       issuer: "Coursera",
       date: "2024",
