@@ -1,19 +1,30 @@
+# Portfolio — Mamekem Rosly
 
+Personal portfolio site built with React, TypeScript, Vite, and Tailwind CSS.
 
-# Run and deploy your AI Studio app
+## Run locally
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/2f58101d-f9a3-475a-8796-4d49ac7942b8
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-# portefolio-2
+
+   ```bash
+   npm install
+   ```
+
+2. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+   The app is served at the URL printed in the terminal (default: port 3000).
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+Static output is written to `dist/` for deployment (e.g. Vercel, Netlify, or any static host).
