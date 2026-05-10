@@ -131,7 +131,7 @@ export default function App() {
               <div className="flex items-center gap-4 md:gap-8">
                 <ThemeToggle />
                 <div className="hidden md:flex items-center gap-8 text-sm font-mono tracking-widest text-zinc-400">
-                  {['About', 'Projects', 'Experience', 'Education', 'Testimonials', 'Certifications'].map((item) => (
+                  {['About', 'Projects', 'Experience', 'Education', 'Research', 'Testimonials', 'Certifications'].map((item) => (
                     <a 
                       key={item} 
                       href={`#${item.toLowerCase()}`} 
