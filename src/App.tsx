@@ -192,7 +192,7 @@ export default function App() {
                      <Award className="w-5 h-5 text-cyan-400" />
                      <span className="text-sm font-bold text-white uppercase tracking-widest">UNDP Tech4Peace AMBASSADOR</span>
                    </div>
-                   <p className="text-sm text-zinc-400">Give One Project Program</p>
+                   <p className="text-sm text-zinc-400">Give1Project Program</p>
                  </div>
                </div>
               </div>
