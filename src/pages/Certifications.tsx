@@ -486,11 +486,12 @@ const Certifications = () => {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase">
-              Professional <br />
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tighter uppercase">
+              <span className="hidden md:inline">Professional </span>
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r tracking-tighter from-cyan-600 to-gray-900 dark:from-cyan-400 dark:to-black">Certifications</span>
             </h1>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-zinc-400 max-w-full md:max-w-2xl mx-auto px-4 md:px-0">
               A comprehensive collection of verified credentials in cybersecurity, artificial intelligence, and cryptographic systems.
             </p>
           </motion.div>
@@ -500,7 +501,7 @@ const Certifications = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-full md:max-w-4xl mx-auto"
           >
             <div className="text-center space-y-2">
               <div className="text-3xl font-black text-cyan-400">{certifications.length}</div>

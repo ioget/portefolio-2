@@ -153,25 +153,26 @@ export default function App() {
           </nav>
 
       {/* Hero */}
-      <header className="min-h-screen flex flex-col justify-center px-6 relative">
+      <header className="min-h-screen mt-32 md:mt-2 flex flex-col justify-center px-6 relative">
         <div className="max-w-6xl mx-auto space-y-12 z-10">
           <div className="space-y-8">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-              <div className="flex-1 space-y-4">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+              <div className="flex-1 space-y-4 md:space-y-6">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="flex items-center gap-3 text-cyan-400 font-mono text-sm tracking-[0.3em] uppercase"
+                  className="flex items-center gap-2 md:gap-3 text-cyan-400 font-mono text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase"
                 >
-                  <div className="w-12 h-px bg-cyan-400" />
-                  Humanizing Infrastructure
+                  <div className="w-8 md:w-12 h-px bg-cyan-400" />
+                  <span className="hidden md:inline">Humanizing Infrastructure</span>
+                  <span className="md:hidden">Infrastructure</span>
                 </motion.div>
                 
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="text-6xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-8"
+                  className="text-4xl md:text-6xl lg:text-9xl font-black tracking-tighter leading-[0.8] mb-4 md:mb-8"
                 >
                   MAMEKEM <br />
                   <span className="hero-name-gradient text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-zinc-800">ROSLY</span>
@@ -181,9 +182,9 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg md:text-2xl text-zinc-400 font-light max-w-3xl leading-relaxed"
+              className="text-sm md:text-lg lg:text-xl text-zinc-400 font-light max-w-full md:max-w-3xl leading-relaxed px-2 md:px-0"
             >
-              Building the next generation of <span className="text-white border-b border-cyan-500/30 font-mono">secure technological ecosystems</span> where math meets curiosity.
+              Building <span className="hidden md:inline">the next generation of</span> <span className="md:hidden">next-gen</span> <span className="text-white border-b border-cyan-500/30 font-mono">secure technological ecosystems</span> where math meets curiosity.
             </motion.p>
 
             <div className="space-y-4 pt-8 border-t border-white/10">
@@ -209,7 +210,7 @@ export default function App() {
                 transition={{ delay: 0.1 }}
                 className="relative"
               >
-                <div className="w-128 h-[calc(100% -70px)] rounded-2xl overflow-hidden">
+                <div className="w-80 md:w-80 mt-6 hidden md:block lg:w-128 h-48 md:h-56 lg:h-[calc(100%-70px)] rounded-2xl overflow-hidden">
                   <img 
                     src={profileImage} 
                     alt="Mamekem Rosly"
@@ -233,7 +234,7 @@ export default function App() {
               <Globe className="w-4 h-4 text-cyan-400" />
               <span className="text-sm font-mono tracking-tight text-white/80">mamakem-rosly.vercel.app</span>
             </div>
-            <div className="flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-4 rounded-2xl">
+            <div className="md:flex hidden items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 px-6 py-4 rounded-2xl">
               <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <span className="text-sm font-mono text-cyan-400 uppercase tracking-widest">Active Research Phase</span>
             </div>
