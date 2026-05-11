@@ -118,7 +118,7 @@ export const ProjectCarousel = () => {
     const accentHex = isLight ? '#16a34a' : '#22d3ee';
     const spotHex = isLight ? '#15803d' : '#0ea5e9';
     const panelColor = isLight ? '#111111' : '#e4e4e7';
-    const titleColor = isLight ? '#ffffff' : '#111827';
+    const titleColor = isLight ? 'white' : '#111827';
     const panelMetalness = isLight ? 0.8 : 0.12;
     const panelRoughness = isLight ? 0.2 : 0.65;
 
